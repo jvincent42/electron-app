@@ -29,7 +29,7 @@ const App = () => {
                 value={ clicky }
             />
 
-        { value() }
+        { clicky() }
             Hello World
         </div>
     )
