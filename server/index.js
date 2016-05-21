@@ -1,11 +1,12 @@
 /* ---------- Requires ------------------------------------------------------ */
 import React    from 'react'
-import ReactDOM from 'react-dom'
+import {renderToStaticMarkup} from 'react-dom/server'
 
 import App      from '../components/app'
 /* -------------------------------------------------------------------------- */
 
-ReactDOM.render(
-    <App />,
-    document.getElementById('container')
+const page = renderToStaticMarkup(
+    <App />
 )
+
+console.log(page);
