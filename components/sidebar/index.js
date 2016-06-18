@@ -1,12 +1,18 @@
 /* ----- Requires ----------------------------------------------------------- */
-import React,{Component} from 'react'
+import React, { PropTypes } from 'react'
 /* -------------------------------------------------------------------------- */
 
-const SideBar = ({ handleClick, handleChange, value }) =>
-    <div className='sidebar'>
-        <button onClick={ handleClick }>Click Me !</button>
-        <input type='text' onChange={ handleChange } />
-        { value() }
-    </div>
+const SideBar = ({ handleClick, value }) =>
+  <div className="sidebar">
+    <button onClick={ handleClick(value) }>Click Me !</button>
+    <div>{ value }</div>
+  </div>
+
+/* ----- PropTypes ---------------------------------------------------------- */
+SideBar.propTypes = {
+  handleClick: PropTypes.func,
+  value: PropTypes.string,
+}
+/* -------------------------------------------------------------------------- */
 
 export default SideBar

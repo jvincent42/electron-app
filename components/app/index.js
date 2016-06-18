@@ -1,39 +1,21 @@
 /* ----- Requires ----------------------------------------------------------- */
-import React,{ Component } from 'react'
-import { stream, combine } from 'flyd'
-import { h }               from 'react-flyd'
+import React, { PropTypes } from 'react'
 /* ----- Components --------------------------------------------------------- */
-import SideBar             from '../sidebar'
 /* -------------------------------------------------------------------------- */
 
-/* ----- Store -------------------------------------------------------------- */
-
-/* -------------------------------------------------------------------------- */
-
-const _style = {
-    marginTop: "40px"
+const style = {
+  marginTop: '40px',
 }
-const App = () => {
 
-    const input = stream()
-    const value = input.map( (e) => e.target.value )
+const App = ({ children }) =>
+  <div style={ style }>
+    { children }
+  </div>
 
-    const click = stream()
-    const clicky = click.map( (e) => value() )
-
-    return (
-        <div style={ _style }>
-            <SideBar
-                handleClick={ click }
-                handleChange={ input }
-                value={ clicky }
-            />
-
-        { clicky() }
-            Hello World
-        </div>
-    )
-
+/* ----- PropTypes ---------------------------------------------------------- */
+App.propTypes = {
+  children: PropTypes.array,
 }
 /* -------------------------------------------------------------------------- */
+
 export default App
