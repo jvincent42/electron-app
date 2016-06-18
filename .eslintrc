@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "no-multi-spaces": 0,         // For indent ease
+    "padded-blocks": 0,           // For indent ease
+    "react/jsx-curly-spacing": 0, // For lisibility
+    "no-extra-semi": 0,           // Why not
+    "semi": 0,                    // Because
+  }
+}
