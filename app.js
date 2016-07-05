@@ -1,5 +1,5 @@
 /* ---------- Electron init ------------------------------------------------- */
-import {app, BrowserWindow} from 'electron'
+import { app, BrowserWindow } from 'electron'
 /* ---------- Requires ------------------------------------------------------ */
 /* ---------- Refs for garbage collection ----------------------------------- */
 let window

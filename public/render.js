@@ -1,22 +1,19 @@
 /* ----- Requires ----------------------------------------------------------- */
 import React            from 'react'
 import ReactDOM         from 'react-dom'
+import { Provider }     from 'react-redux'
 /* ----- Components --------------------------------------------------------- */
 import App              from '../components/app'
 import SideBar          from '../components/sidebar'
 /* ----- Store -------------------------------------------------------------- */
-
+import store            from '../store'
 /* -------------------------------------------------------------------------- */
 
-const onClick = value => () => console.log(value)
-const value = 'Yolo'
-
 ReactDOM.render(
-  <App>
-    <SideBar
-      handleClick={ onClick }
-      value={ value }
-    />
-  </App>,
+  <Provider store={ store }>
+    <App>
+      <SideBar />
+    </App>
+  </Provider>,
   document.getElementById('container')
 )

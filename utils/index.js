@@ -9,3 +9,5 @@ export const mapC = (Component, xs) => props =>
   <div className={props.className}>
     { xs.map((x, i) => <Component key={i} {...x} {...props} />) }
   </div>
+
+export const always = x => () => x

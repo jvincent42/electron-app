@@ -14,8 +14,10 @@ const App = ({ children }) =>
 
 /* ----- PropTypes ---------------------------------------------------------- */
 App.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.element
+  ])
 }
 /* -------------------------------------------------------------------------- */
-
 export default App
