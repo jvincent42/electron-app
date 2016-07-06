@@ -1,14 +1,12 @@
 /* ----- Requires ----------------------------------------------------------- */
 import React, { PropTypes } from 'react'
 /* ----- Components --------------------------------------------------------- */
+import SideBar from '../SideBar'
 /* -------------------------------------------------------------------------- */
 
-const style = {
-  marginTop: '40px',
-}
-
 const App = ({ children }) =>
-  <div style={ style }>
+  <div className="app">
+    <SideBar />
     { children }
   </div>
 

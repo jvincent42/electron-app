@@ -6,14 +6,14 @@ import { identity, mapC, lift } from '../../utils'
 import * as sideActions         from '../../store/actions/sideActions'
 /* -------------------------------------------------------------------------- */
 
-const SideItem = ({ icon, text, click, action }) =>
-  <div className={ `side-${icon}` } onClick={ click(action) }>
+const SideItem = ({ icon, text, location, handleClick }) =>
+  <div className={ `side-${icon}` } onClick={ x => handleClick(location) }>
     { text }
   </div>
 
-const SideBar = ({ sideItems, actions }) => {
+const SideBar = ({ sideItems, actions, ...props }) => {
   const SideItems = mapC(SideItem, sideItems)
-  return <SideItems className="sidebar" click={ actions.click } />
+  return <SideItems className="sidebar" handleClick={ actions.handleClick } />
 }
 
 /* ----- PropTypes ---------------------------------------------------------- */
@@ -28,9 +28,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  actions: {
-    click: sideActions.click(dispatch)
-  }
+  actions: bindActionCreators({
+    handleClick: sideActions.navigate
+  }, dispatch),
 })
 
 export default connect(

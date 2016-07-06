@@ -8,10 +8,9 @@ let window
 function createBrowserWindow () {
     // Init Window
     window = new BrowserWindow({
-        width:          800,
-        height:         600,
-        frame:          true,
-        titleBarStyle:  'hidden-inset',
+        width:          1024,
+        height:         700,
+        frame:          true
     })
 
     // Load template file

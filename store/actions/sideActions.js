@@ -1,5 +1,6 @@
 /* ----- Requires ----------------------------------------------------------- */
 import actions from '../constants'
+import { push } from 'react-router-redux'
 /* -------------------------------------------------------------------------- */
 
 const actionAdd = () => ({ type: actions.ADD })
@@ -14,16 +15,7 @@ export const sub = () => (dispatch, getState) => {
   console.log(getState())
 }
 
-// const actionClick = () => ({ type: actions.ADD })
-// export const click = (dispatch) => action => () => {
-//   dispatch((dispatch, getState) => {
-//     dispatch(actionClick())
-//     console.log(getState(), action)
-//   })
-// }
-export const click = (dispatch) => action => () => {
-  dispatch({
-    type: actions.ADD,
-    action: action
-  })
+export const navigate = location => (dispatch, getState) => {
+  console.log(location);
+  dispatch(push( `/${location}` ))
 }

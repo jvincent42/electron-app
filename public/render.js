@@ -1,19 +1,20 @@
 /* ----- Requires ----------------------------------------------------------- */
-import React            from 'react'
-import ReactDOM         from 'react-dom'
-import { Provider }     from 'react-redux'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { hashHistory, Router } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
 /* ----- Components --------------------------------------------------------- */
-import App              from '../components/app'
-import SideBar          from '../components/sidebar'
 /* ----- Store -------------------------------------------------------------- */
-import store            from '../store'
+import store from '../store'
+import routes from '../routes'
 /* -------------------------------------------------------------------------- */
+
+const history = syncHistoryWithStore(hashHistory, store)
 
 ReactDOM.render(
   <Provider store={ store }>
-    <App>
-      <SideBar />
-    </App>
+    <Router history={ history } routes={ routes } />
   </Provider>,
   document.getElementById('container')
 )
