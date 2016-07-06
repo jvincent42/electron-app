@@ -1,0 +1,32 @@
+
+.sidebar {
+  float: left;
+  width: 150px;
+  height: 100vh;
+}
+
+.sidebar > div {
+  width: 50px;
+  height: 50px;
+}
+
+.page-home {
+  float: left;
+  width: calc(100% - 150px);
+  height: 100vh;
+  background-color: #e07575;
+}
+
+.page-images {
+  float: left;
+  width: calc(100% - 150px);
+  height: 100vh;
+  background-color: #89e65e;
+}
+
+.page-link {
+  float: left;
+  width: calc(100% - 150px);
+  height: 100vh;
+  background-color: #4090ed;
+}
