@@ -6,8 +6,8 @@ import { hashHistory, Router } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 /* ----- Components --------------------------------------------------------- */
 /* ----- Store -------------------------------------------------------------- */
-import store from '../store'
-import routes from '../routes'
+import store from './src/store'
+import routes from './src/routes'
 /* -------------------------------------------------------------------------- */
 
 const history = syncHistoryWithStore(hashHistory, store)

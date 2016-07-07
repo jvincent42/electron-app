@@ -5,7 +5,7 @@ import SideBar from '../SideBar'
 /* -------------------------------------------------------------------------- */
 
 const App = ({ children }) =>
-  <div className="app">
+  <div className="app group">
     <SideBar />
     { children }
   </div>
